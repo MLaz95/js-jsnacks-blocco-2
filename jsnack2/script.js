@@ -12,12 +12,16 @@ console.log(number)
 do{
     // asks the user a number and compares it to the random computer number
     userGuess = Number(prompt('Guess what number I am thinking of'))
-    if (userGuess > number){
+    if(isNaN(userGuess)){
+        alert('That is not a number, try again')
+    } else{
+        if (userGuess > number){
         alert('Too high, guess again');
-    }else if (userGuess < number){
-        alert('Too low, guess again');
+        }else if (userGuess < number){
+            alert('Too low, guess again');
+        }
     }
-
+    
     // stops when the user guesses right
 } while (userGuess != number);
 
