@@ -8,9 +8,17 @@ const array = [];
 let sum = 0;
 
 do {
-    const userInput = Number(prompt("Inserisci un numero"));
-    array.push(userInput);
-    sum += userInput;
+    const userInput = Number(prompt("Insert a number"));
+
+    // input validation
+    if (isNaN(userInput)){
+        alert('That is not a number, please try again');
+    } else{
+        // adds input to array and to the sum
+        array.push(userInput);
+        sum += userInput;
+    }
+        // ends when sum is 50 or higher
 } while (sum < 50);
 
 document.querySelector('#result').innerHTML = `You input ${array}, the final value is ${sum}`
